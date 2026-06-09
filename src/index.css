@@ -1,0 +1,613 @@
+@import './theme/theme-variables.css';
+@import 'tailwindcss';
+
+@theme {
+	/* Font family */
+	--font-roboto: var(--font-roboto);
+
+	/* Brand and neutral colors */
+	--color-primary: var(--primary-color);
+	--color-brand: var(--primary-color);
+	--color-brand-dark: var(--brand-dark-color);
+	--color-brand-deep: var(--brand-deep-color);
+	--color-secondary: var(--secondary-color);
+	--color-brand-light: var(--secondary-color);
+	--color-neutral-light: var(--neutral-light);
+	--color-neutral-dark: var(--neutral-dark);
+
+	/* Semantic colors */
+	--color-background: var(--bg-color);
+	--color-card: var(--card-color);
+	--color-divider: var(--divider-color);
+	--color-border: var(--divider-color);
+	--color-field: var(--field-color);
+	--color-input: var(--field-color);
+	--color-ring: var(--secondary-color);
+	--color-text-1: var(--text-1);
+	--color-text-2: var(--text-2);
+	--color-text-3: var(--text-3);
+	--color-foreground: var(--text-1);
+	--color-muted: var(--field-color);
+	--color-muted-foreground: var(--text-2);
+
+	/* Alerts */
+	--color-alert-1: var(--alert-color-1);
+	--color-alert-2: var(--alert-color-2);
+	--color-warning: var(--alert-color-1);
+	--color-error: var(--alert-color-2);
+	--color-destructive: var(--alert-color-2);
+
+	/* Pill status colors */
+	--color-pill-draft: var(--pill-draft);
+	--color-pill-submitted: var(--pill-submitted);
+	--color-pill-approved: var(--pill-approved);
+	--color-pill-rejected: var(--pill-rejected);
+	--color-pill-sent-back: var(--pill-sent-back);
+
+	/* Onboarding list action button colors */
+	--color-btn-approve: var(--btn-approve-bg);
+	--color-btn-send-back: var(--btn-send-back-bg);
+	--color-btn-reject: var(--btn-reject-bg);
+
+	/* Onboarding alert colors */
+	--color-onboard-success: var(--onboard-success-color);
+	--color-onboard-success-bg: var(--onboard-success-bg);
+	--color-onboard-error: var(--onboard-error-color);
+	--color-onboard-error-bg: var(--onboard-error-bg);
+
+	/* KPI gradient colors */
+	--color-kpi-1-start: var(--kpi-1-start);
+	--color-kpi-1-end: var(--kpi-1-end);
+	--color-kpi-2-start: var(--kpi-2-start);
+	--color-kpi-2-end: var(--kpi-2-end);
+	--color-kpi-3-start: var(--kpi-3-start);
+	--color-kpi-3-end: var(--kpi-3-end);
+	--color-kpi-4-start: var(--kpi-4-start);
+	--color-kpi-4-end: var(--kpi-4-end);
+
+	/* Chart gradient colors */
+	--color-pie-1-start: var(--pie-1-start);
+	--color-pie-1-end: var(--pie-1-end);
+	--color-pie-2-start: var(--pie-2-start);
+	--color-pie-2-end: var(--pie-2-end);
+	--color-pie-3-start: var(--pie-3-start);
+	--color-pie-3-end: var(--pie-3-end);
+	--color-pie-4-start: var(--pie-4-start);
+	--color-pie-4-end: var(--pie-4-end);
+
+	/* Medium typography scale from the design system */
+	--text-h1: var(--text-h1);
+	--text-h2: var(--text-h2);
+	--text-h3: var(--text-h3);
+	--text-h4: var(--text-h4);
+	--text-h5: var(--text-h5);
+	--text-h6: var(--text-h6);
+	--text-p1: var(--text-p1);
+	--text-p2: var(--text-p2);
+
+	/* Radii */
+	--radius-button: var(--radius-button-val);
+	--radius-card: var(--radius-card-val);
+	--radius-field: var(--radius-field-val);
+	--radius-panel: var(--radius-panel-val);
+
+	/* Gradients */
+	--background-image-gradient-kpi-1: linear-gradient(135deg, var(--color-kpi-1-start), var(--color-kpi-1-end));
+	--background-image-gradient-kpi-2: linear-gradient(135deg, var(--color-kpi-2-start), var(--color-kpi-2-end));
+	--background-image-gradient-kpi-3: linear-gradient(135deg, var(--color-kpi-3-start), var(--color-kpi-3-end));
+	--background-image-gradient-kpi-4: linear-gradient(135deg, var(--color-kpi-4-start), var(--color-kpi-4-end));
+	--background-image-gradient-pie-1: linear-gradient(180deg, var(--color-pie-1-start), var(--color-pie-1-end));
+	--background-image-gradient-pie-2: linear-gradient(180deg, var(--color-pie-2-start), var(--color-pie-2-end));
+	--background-image-gradient-pie-3: linear-gradient(180deg, var(--color-pie-3-start), var(--color-pie-3-end));
+	--background-image-gradient-pie-4: linear-gradient(180deg, var(--color-pie-4-start), var(--color-pie-4-end));
+	--background-image-gradient-brand-1: linear-gradient(180deg, #002f50 27%, #004a7d 79%);
+	--background-image-gradient-brand-2: linear-gradient(95deg, #055185 0%, #1eafc0 100%);
+}
+
+/* Specific button overrides for dark mode */
+.dark .btn-primary,
+.dark .btn-brand,
+:root.dark .btn-primary,
+:root.dark .btn-brand,
+[data-theme='dark'] .btn-primary,
+[data-theme='dark'] .btn-brand {
+	background-color: var(--secondary-color) !important;
+	color: #010810 !important;
+}
+
+.dark .btn-outline,
+:root.dark .btn-outline,
+[data-theme='dark'] .btn-outline {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+	border-color: #1a2632 !important;
+}
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		border-color: var(--divider-color);
+	}
+
+	html,
+	body,
+	#root {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	html {
+		font-family: var(--font-roboto);
+		background-color: var(--bg-color);
+	}
+
+	body {
+		margin: 0;
+		min-width: 320px;
+		background-color: var(--bg-color);
+		color: var(--text-1);
+		font-family: var(--font-roboto);
+		font-size: var(--text-p1);
+		line-height: 1.5;
+		letter-spacing: 0;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		font: inherit;
+		letter-spacing: 0;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	button:disabled,
+	input:disabled,
+	textarea:disabled,
+	select:disabled {
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0;
+		letter-spacing: 0;
+	}
+
+	h1 {
+		@apply text-h1 font-medium leading-tight;
+	}
+
+	h2 {
+		@apply text-h2 font-semibold leading-tight;
+	}
+
+	h3 {
+		@apply text-h3 font-bold leading-snug;
+	}
+
+	h4 {
+		@apply text-h4 font-semibold leading-snug;
+	}
+
+	h5 {
+		@apply text-h5 font-semibold leading-snug;
+	}
+
+	h6 {
+		@apply text-h6 font-bold leading-snug;
+	}
+
+	p {
+		@apply text-p1 font-normal;
+	}
+
+	small {
+		@apply text-p2 font-medium;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--secondary-color);
+		outline-offset: 2px;
+	}
+}
+
+@layer components {
+	.btn-primary,
+	.btn-brand {
+		@apply inline-flex min-h-[36px] items-center justify-center rounded-[8px] px-8 py-2 text-p1 font-bold transition-all;
+		background-color: var(--secondary-color);
+		color: var(--neutral-light);
+		min-width: 100px;
+	}
+
+	.btn-primary:hover,
+	.btn-brand:hover {
+		filter: brightness(0.95);
+	}
+
+	.btn-primary:active,
+	.btn-brand:active {
+		transform: scale(0.98);
+	}
+
+	.btn-ghost,
+	.btn-outline {
+		@apply inline-flex min-h-[36px] items-center justify-center rounded-[8px] border bg-card px-8 py-2 text-p1 font-bold transition-all;
+		border-color: var(--divider-color);
+		color: var(--text-1);
+		min-width: 100px;
+	}
+
+	.btn-ghost:hover,
+	.btn-outline:hover {
+		background-color: var(--field-color);
+	}
+
+	.card {
+		@apply rounded-card border bg-card p-6 shadow-sm;
+		border-color: var(--divider-color);
+	}
+
+	.input-field,
+	.form-input {
+		@apply w-full rounded-[6px] border px-[10px] py-2 text-text-1 transition-all;
+		background-color: var(--field-color);
+		border-color: var(--divider-color);
+		min-height: 34px;
+		font-size: var(--form-input);
+	}
+
+	.input-field::placeholder,
+	.form-input::placeholder {
+		color: var(--text-3);
+		font-size: 11px;
+	}
+
+	.input-field:focus,
+	.form-input:focus {
+		border-color: var(--secondary-color);
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--secondary-color) 18%, transparent);
+		outline: none;
+	}
+
+	.form-label {
+		@apply mb-2 block font-medium text-text-1;
+		font-size: var(--form-label);
+	}
+
+	.add-doctor-form-container .form-label {
+		margin-bottom: 0px !important;
+		font-size: 12px !important;
+		line-height: 1 !important;
+		font-weight: 500 !important;
+	}
+
+	.section-tab {
+		@apply relative inline-flex items-center gap-1.5 px-4 py-2.5 text-neutral-light;
+		/* Cap width so the tab + its 24px swoosh tail stay within the card width. */
+		max-width: calc(100% - 34px);
+		background: linear-gradient(92deg, #055185 84.24%, #1eafc0 105.72%);
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+		isolation: isolate;
+		overflow: visible;
+	}
+
+	/* Perfect concave folder-tab tail using an SVG mask */
+	.section-tab::after {
+		content: '';
+		position: absolute;
+		top: 10px;
+		/* Starts exactly where the top-right radius ends */
+		bottom: 0;
+		right: -24px;
+		width: 25px;
+		/* 1px overlap with the main tab to prevent seams */
+		/* Seamlessly continues the gradient from the main tab's right edge.
+       The color #1796b0 is mathematically exactly the color at the 100% mark of the main tab's gradient. */
+		background: linear-gradient(92deg, #1796b0 0%, #1eafc0 100%);
+		/* SVG Mask: A precise Quadratic Bezier curve creating the swooping tail */
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 Q0,100 100,100 L0,100 Z'/%3E%3C/svg%3E");
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 Q0,100 100,100 L0,100 Z'/%3E%3C/svg%3E");
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	.section-tab-title {
+		font-size: calc(var(--text-p1) + 4px);
+		font-weight: 500;
+		line-height: 1;
+	}
+
+	.section-tab-dot {
+		font-size: 14px;
+		line-height: 1;
+		opacity: 0.9;
+	}
+
+	.section-tab .section-tab-sub {
+		font-size: calc(var(--text-p1) + 2px);
+		font-weight: 400;
+		line-height: 1.2;
+		opacity: 0.92;
+	}
+}
+
+@layer utilities {
+	.text-brand {
+		color: var(--primary-color);
+	}
+
+	.text-brand-light {
+		color: var(--secondary-color);
+	}
+
+	.text-brand-gradient {
+		background-image: var(--gradient-brand);
+		background-clip: text;
+		color: transparent;
+		-webkit-background-clip: text;
+	}
+
+	.bg-brand {
+		background-color: var(--primary-color);
+	}
+
+	.bg-brand-light {
+		background-color: var(--secondary-color);
+	}
+
+	.bg-brand-soft {
+		background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+	}
+
+	.bg-brand-gradient {
+		background-image: var(--gradient-brand);
+	}
+
+	.bg-brand-gradient-vertical {
+		background-image: var(--gradient-brand-vertical);
+	}
+
+	.bg-brand-gradient-deep {
+		background-image: var(--gradient-brand-deep);
+	}
+
+	.border-brand {
+		border-color: var(--primary-color);
+	}
+
+	.border-brand-light {
+		border-color: var(--secondary-color);
+	}
+
+	.surface-app {
+		background-color: var(--bg-color);
+		color: var(--text-1);
+	}
+
+	.surface-card {
+		background-color: var(--card-color);
+		color: var(--text-1);
+	}
+
+	.surface-field {
+		background-color: var(--field-color);
+		color: var(--text-1);
+	}
+
+	.custom-scrollbar {
+		scrollbar-width: thin;
+		-webkit-overflow-scrolling: touch;
+		scroll-behavior: smooth;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes slide-in-from-right {
+		from {
+			transform: translateX(100%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+
+	.animate-in {
+		animation-duration: 300ms;
+		animation-fill-mode: both;
+	}
+
+	.fade-in {
+		animation-name: fade-in;
+	}
+
+	.slide-in-from-right-5 {
+		animation-name: slide-in-from-right;
+	}
+
+	.spinner {
+		width: 14px;
+		height: 14px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-radius: 50%;
+		border-top-color: #fff;
+		animation: spin 0.8s linear infinite;
+	}
+	.custom-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.custom-scrollbar {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+/* Custom Date & Time picker overrides to match native form inputs */
+.date-input-wrapper .MuiInputBase-root,
+.time-input-wrapper .MuiInputBase-root,
+.custom-date-picker-field .MuiInputBase-root,
+.custom-time-picker-field .MuiInputBase-root {
+	background-color: var(--field-color) !important;
+	height: 34px !important;
+	min-height: 34px !important;
+	border-radius: 6px !important;
+	transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+	padding-right: 6px !important;
+}
+
+.date-input-wrapper .MuiInputBase-input,
+.time-input-wrapper .MuiInputBase-input,
+.custom-date-picker-field .MuiInputBase-input,
+.custom-time-picker-field .MuiInputBase-input {
+	background-color: transparent !important;
+	color: var(--text-1) !important;
+	padding: 0 10px !important;
+	height: 100% !important;
+	line-height: 34px !important;
+	font-size: var(--form-input) !important;
+}
+
+.date-input-wrapper .MuiInputBase-input::placeholder,
+.time-input-wrapper .MuiInputBase-input::placeholder,
+.custom-date-picker-field .MuiInputBase-input::placeholder,
+.custom-time-picker-field .MuiInputBase-input::placeholder {
+	color: var(--text-3) !important;
+	opacity: 1 !important;
+	font-size: 11px !important;
+}
+
+.date-input-wrapper .MuiOutlinedInput-notchedOutline,
+.time-input-wrapper .MuiOutlinedInput-notchedOutline,
+.custom-date-picker-field .MuiOutlinedInput-notchedOutline,
+.custom-time-picker-field .MuiOutlinedInput-notchedOutline {
+	border-color: var(--divider-color) !important;
+	border-width: 1px !important;
+	transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.date-input-wrapper .MuiInputBase-root:hover:not(.Mui-focused):not(:focus-within) .MuiOutlinedInput-notchedOutline,
+.time-input-wrapper .MuiInputBase-root:hover:not(.Mui-focused):not(:focus-within) .MuiOutlinedInput-notchedOutline,
+.custom-date-picker-field .MuiInputBase-root:hover:not(.Mui-focused):not(:focus-within) .MuiOutlinedInput-notchedOutline,
+.custom-time-picker-field .MuiInputBase-root:hover:not(.Mui-focused):not(:focus-within) .MuiOutlinedInput-notchedOutline {
+	border-color: var(--divider-color) !important;
+}
+
+/* Focused states */
+.date-input-wrapper .MuiInputBase-root.Mui-focused,
+.date-input-wrapper .MuiInputBase-root:focus-within,
+.time-input-wrapper .MuiInputBase-root.Mui-focused,
+.time-input-wrapper .MuiInputBase-root:focus-within,
+.custom-date-picker-field .MuiInputBase-root.Mui-focused,
+.custom-date-picker-field .MuiInputBase-root:focus-within,
+.custom-time-picker-field .MuiInputBase-root.Mui-focused,
+.custom-time-picker-field .MuiInputBase-root:focus-within {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--secondary-color) 18%, transparent) !important;
+	background-color: var(--field-color) !important;
+}
+
+.date-input-wrapper .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.date-input-wrapper .MuiInputBase-root:focus-within .MuiOutlinedInput-notchedOutline,
+.time-input-wrapper .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.time-input-wrapper .MuiInputBase-root:focus-within .MuiOutlinedInput-notchedOutline,
+.custom-date-picker-field .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.custom-date-picker-field .MuiInputBase-root:focus-within .MuiOutlinedInput-notchedOutline,
+.custom-time-picker-field .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.custom-time-picker-field .MuiInputBase-root:focus-within .MuiOutlinedInput-notchedOutline {
+	border-color: var(--secondary-color) !important;
+	border-width: 1px !important;
+	border-style: solid !important;
+}
+
+/* Error states */
+.date-input-wrapper .MuiInputBase-root.Mui-error .MuiOutlinedInput-notchedOutline,
+.time-input-wrapper .MuiInputBase-root.Mui-error .MuiOutlinedInput-notchedOutline,
+.custom-date-picker-field .MuiInputBase-root.Mui-error .MuiOutlinedInput-notchedOutline,
+.custom-time-picker-field .MuiInputBase-root.Mui-error .MuiOutlinedInput-notchedOutline {
+	border-color: #ef4444 !important;
+}
+
+.date-input-wrapper .MuiInputBase-root.Mui-error.Mui-focused,
+.date-input-wrapper .MuiInputBase-root.Mui-error:focus-within,
+.time-input-wrapper .MuiInputBase-root.Mui-error.Mui-focused,
+.time-input-wrapper .MuiInputBase-root.Mui-error:focus-within,
+.custom-date-picker-field .MuiInputBase-root.Mui-error.Mui-focused,
+.custom-date-picker-field .MuiInputBase-root.Mui-error:focus-within,
+.custom-time-picker-field .MuiInputBase-root.Mui-error.Mui-focused,
+.custom-time-picker-field .MuiInputBase-root.Mui-error:focus-within {
+	box-shadow: none !important;
+}
+
+/* Icon button formatting */
+.date-input-wrapper .MuiIconButton-root,
+.time-input-wrapper .MuiIconButton-root,
+.custom-date-picker-field .MuiIconButton-root,
+.custom-time-picker-field .MuiIconButton-root {
+	padding: 4px !important;
+	color: var(--text-2) !important;
+}
+
+/* Form Helper Text formatting */
+.date-input-wrapper .MuiFormHelperText-root,
+.time-input-wrapper .MuiFormHelperText-root,
+.custom-date-picker-field .MuiFormHelperText-root,
+.custom-time-picker-field .MuiFormHelperText-root {
+	margin-left: 0 !important;
+	margin-top: 4px !important;
+	font-size: 11px !important;
+	line-height: 1.25 !important;
+	color: #dc2626 !important;
+}

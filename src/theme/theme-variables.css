@@ -1,0 +1,346 @@
+/* theme/theme-variables.css */
+
+:root {
+	/* Fonts */
+	--font-roboto: 'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	/* Figma Design-System Primitives */
+	--primary-color: #055185;
+	--brand-dark-color: #002f50;
+	--brand-deep-color: #004a7d;
+	--secondary-color: #1eafc0;
+	--neutral-light: #ffffff;
+	--neutral-dark: #000000;
+	--alert-color-1: #ff9800;
+	--alert-color-2: #ef5350;
+
+	/* Form & Component Aliases */
+	--color-brand: var(--primary-color);
+	--color-brand-light: var(--secondary-color);
+	--color-brand-soft: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+	--color-background: var(--bg-color);
+	--color-foreground: var(--text-1);
+	--color-card: var(--card-color);
+	--color-card-foreground: var(--text-1);
+	--color-border: var(--divider-color);
+	--color-input: var(--field-color);
+	--color-ring: var(--secondary-color);
+	--color-muted: var(--field-color);
+	--color-muted-foreground: var(--text-2);
+	--color-accent: var(--field-color);
+	--color-accent-foreground: var(--text-1);
+	--color-destructive: var(--alert-color-2);
+	--color-warning: var(--alert-color-1);
+	--color-success: #13ba97;
+
+	/* Gradients */
+	--gradient-brand: linear-gradient(95deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+	--gradient-brand-vertical: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+	--gradient-brand-deep: linear-gradient(180deg, #002f50 27%, #004a7d 79%);
+
+	/* KPI gradient colors */
+	--kpi-1-start: #2784ff;
+	--kpi-1-end: #5ba9a7;
+	--kpi-2-start: #223ce0;
+	--kpi-2-end: #5b4dd5;
+	--kpi-3-start: #13ba97;
+	--kpi-3-end: #6fb86f;
+	--kpi-4-start: #7e4bc2;
+	--kpi-4-end: #9d4284;
+
+	/* Chart gradient colors */
+	--pie-1-start: #f2be3a;
+	--pie-1-end: #d79a00;
+	--pie-2-start: #3ee7c4;
+	--pie-2-end: #10bc99;
+	--pie-3-start: #5169f2;
+	--pie-3-end: #1c39df;
+	--pie-4-start: #2684ff;
+	--pie-4-end: #1b69d0;
+
+	/* Radii */
+	--radius-button-val: 10px;
+	--radius-card-val: 10px;
+	--radius-field-val: 10px;
+	--radius-panel-val: 20px;
+
+	/* Default Typography Scale - Medium */
+	--text-h1: 40px;
+	--text-h2: 30px;
+	--text-h3: 22px;
+	--text-h4: 18px;
+	--text-h5: 14px;
+	--text-h6: 12px;
+	--text-p1: 12px;
+	--text-p2: 10px;
+
+	/* Alternate scales for referencing */
+	--text-h1-sm: 38px;
+	--text-h2-sm: 28px;
+	--text-h3-sm: 20px;
+	--text-h4-sm: 16px;
+	--text-h5-sm: 12px;
+	--text-h6-sm: 10px;
+	--text-p1-sm: 10px;
+	--text-p2-sm: 8px;
+
+	--text-h1-lg: 42px;
+	--text-h2-lg: 32px;
+	--text-h3-lg: 24px;
+	--text-h4-lg: 20px;
+	--text-h5-lg: 16px;
+	--text-h6-lg: 14px;
+	--text-p1-lg: 14px;
+	--text-p2-lg: 12px;
+
+	/* Global Form Scales */
+	--form-title: 16px;
+	--form-label: 12px;
+	--form-input: 12px;
+	--form-btn: 12px;
+
+	/* Global Entity & Doctor Scales */
+	--entity-title: 16px;
+	--entity-table-text: 12px;
+	--entity-add-text: 12px;
+	--doctor-title: 16px;
+	--doctor-filter-label: 10px;
+	--doctor-filter-text: 12px;
+	--doctor-table-text: 12px;
+	--doctor-footer-text: 12px;
+	--doctor-add-text: 12px;
+}
+
+/* Light Theme Variables */
+:root,
+:root.light,
+[data-theme='light'] {
+	color-scheme: light;
+	--bg-color: #ebf1f7;
+	--card-color: #f9fbfd;
+	--divider-color: #cad4de;
+	--field-color: #e7f0f8;
+	--text-1: #031421;
+	--text-2: #49555f;
+	--text-3: #5d656c;
+
+	/* Dashboard specific variables */
+	--dash-card-shadow: 0 1px 2px rgba(3, 20, 33, 0.06), 0 8px 24px rgba(209, 222, 234, 0.42);
+	--dash-chart-grid: #cad4de;
+	--dash-donut-track: #e7f0f8;
+	--dash-pie-ring-bg: #f2f6fa;
+	--dash-franchise-bar: linear-gradient(180deg, #2684ff 11%, #1b69d0 88%);
+	--dash-revenue-area-top: color-mix(in srgb, var(--primary-color) 22%, transparent);
+	--dash-revenue-area-bottom: color-mix(in srgb, var(--primary-color) 0%, transparent);
+	--dash-tooltip-bg: #031421;
+	--dash-tooltip-fg: #ffffff;
+	--dash-member-row: #ffffff;
+	--dash-member-row-alt: #f3f8fc;
+	--dash-rev-bar-border: #ffffff;
+	--dash-rev-marker: #cad4de;
+	--dash-rev-label: #69757f;
+	--dash-rev-value: #4d5a66;
+
+	/* Pill status colors */
+	--pill-draft: #d97706;
+	--pill-submitted: #2563eb;
+	--pill-approved: #16a34a;
+	--pill-rejected: #dc2626;
+	--pill-sent-back: #9333ea;
+
+	/* Onboarding list action button colors */
+	--btn-approve-bg: #10b515;
+	--btn-send-back-bg: #a855f7;
+	--btn-reject-bg: #ef4444;
+
+	/* Onboarding alert colors */
+	--onboard-success-color: #16a34a;
+	--onboard-success-bg: #bbf7d0;
+	--onboard-error-color: #ef5350;
+	--onboard-error-bg: #ffebee;
+}
+
+/* Dark Theme Variables */
+.dark,
+:root.dark,
+[data-theme='dark'] {
+	color-scheme: dark;
+	--bg-color: #020f1c;
+	--card-color: #111b26;
+	--divider-color: #2c3742;
+	--field-color: #1b2a39;
+	--text-1: #f9fcff;
+	--text-2: #c3d8f1;
+	--text-3: #8198b1;
+
+	/* Dashboard specific variables */
+	--dash-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 28px rgba(0, 0, 0, 0.45);
+	--dash-chart-grid: #2c3742;
+	--dash-donut-track: #1b2a39;
+	--dash-pie-ring-bg: #1b2a39;
+	--dash-franchise-bar: linear-gradient(180deg, #3d9fff 11%, #2684ff 88%);
+	--dash-revenue-area-top: color-mix(in srgb, var(--primary-color) 35%, transparent);
+	--dash-revenue-area-bottom: color-mix(in srgb, var(--primary-color) 0%, transparent);
+	--dash-tooltip-bg: #f9fbfd;
+	--dash-tooltip-fg: #031421;
+	--dash-member-row: #111b26;
+	--dash-member-row-alt: #16242f;
+	--dash-rev-bar-border: #111b26;
+	--dash-rev-marker: #314150;
+	--dash-rev-label: #5e7488;
+	--dash-rev-value: #91a1b4;
+
+	/* Pill status colors */
+	--pill-draft: #f59e0b;
+	--pill-submitted: #3b82f6;
+	--pill-approved: #22c55e;
+	--pill-rejected: #ef4444;
+	--pill-sent-back: #a855f7;
+
+	/* Onboarding list action button colors */
+	--btn-approve-bg: #10b515;
+	--btn-send-back-bg: #a855f7;
+	--btn-reject-bg: #ef4444;
+
+	/* Onboarding alert colors */
+	--onboard-success-color: #4ade80;
+	--onboard-success-bg: rgba(22, 163, 74, 0.2);
+	--onboard-error-color: #ef5350;
+	--onboard-error-bg: rgba(239, 83, 80, 0.2);
+}
+
+/* System Dark Theme Preference */
+@media (prefers-color-scheme: dark) {
+	:root:not(.light) {
+		color-scheme: dark;
+		--bg-color: #020f1c;
+		--card-color: #111b26;
+		--divider-color: #2c3742;
+		--field-color: #1b2a39;
+		--text-1: #f9fcff;
+		--text-2: #c3d8f1;
+		--text-3: #8198b1;
+
+		--dash-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 28px rgba(0, 0, 0, 0.45);
+		--dash-chart-grid: #2c3742;
+		--dash-donut-track: #1b2a39;
+		--dash-pie-ring-bg: #1b2a39;
+		--dash-franchise-bar: linear-gradient(180deg, #3d9fff 11%, #2684ff 88%);
+		--dash-revenue-area-top: color-mix(in srgb, var(--primary-color) 35%, transparent);
+		--dash-revenue-area-bottom: color-mix(in srgb, var(--primary-color) 0%, transparent);
+		--dash-tooltip-bg: #f9fbfd;
+		--dash-tooltip-fg: #031421;
+		--dash-member-row: #111b26;
+		--dash-member-row-alt: #16242f;
+		--dash-rev-bar-border: #111b26;
+		--dash-rev-marker: #314150;
+		--dash-rev-label: #5e7488;
+		--dash-rev-value: #91a1b4;
+
+		/* Pill status colors */
+		--pill-draft: #f59e0b;
+		--pill-submitted: #3b82f6;
+		--pill-approved: #22c55e;
+		--pill-rejected: #ef4444;
+		--pill-sent-back: #a855f7;
+
+		/* Onboarding list action button colors */
+		--btn-approve-bg: #10b515;
+		--btn-send-back-bg: #a855f7;
+		--btn-reject-bg: #ef4444;
+
+		/* Onboarding alert colors */
+		--onboard-success-color: #4ade80;
+		--onboard-success-bg: rgba(22, 163, 74, 0.2);
+		--onboard-error-color: #ef5350;
+		--onboard-error-bg: rgba(239, 83, 80, 0.2);
+	}
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY & FORM SIZING SCALES
+   Overrides applied via app scaling classes
+   ───────────────────────────────────────────── */
+.scale-small {
+	--text-h1: 38px;
+	--text-h2: 28px;
+	--text-h3: 20px;
+	--text-h4: 16px;
+	--text-h5: 12px;
+	--text-h6: 10px;
+	--text-p1: 10px;
+	--text-p2: 8px;
+
+	/* Global Form Scales */
+	--form-title: 14px;
+	--form-label: 10px;
+	--form-input: 10px;
+	--form-btn: 10px;
+
+	/* Global Entity & Doctor Scales */
+	--entity-title: 14px;
+	--entity-table-text: 10px;
+	--entity-add-text: 10px;
+	--doctor-title: 14px;
+	--doctor-filter-label: 9px;
+	--doctor-filter-text: 10px;
+	--doctor-table-text: 10px;
+	--doctor-footer-text: 10px;
+	--doctor-add-text: 10px;
+}
+
+.scale-medium {
+	--text-h1: 40px;
+	--text-h2: 30px;
+	--text-h3: 22px;
+	--text-h4: 18px;
+	--text-h5: 14px;
+	--text-h6: 12px;
+	--text-p1: 12px;
+	--text-p2: 10px;
+
+	/* Global Form Scales */
+	--form-title: 16px;
+	--form-label: 12px;
+	--form-input: 12px;
+	--form-btn: 12px;
+
+	/* Global Entity & Doctor Scales */
+	--entity-title: 16px;
+	--entity-table-text: 12px;
+	--entity-add-text: 12px;
+	--doctor-title: 16px;
+	--doctor-filter-label: 10px;
+	--doctor-filter-text: 12px;
+	--doctor-table-text: 12px;
+	--doctor-footer-text: 12px;
+	--doctor-add-text: 12px;
+}
+
+.scale-large {
+	--text-h1: 42px;
+	--text-h2: 32px;
+	--text-h3: 24px;
+	--text-h4: 20px;
+	--text-h5: 16px;
+	--text-h6: 14px;
+	--text-p1: 14px;
+	--text-p2: 12px;
+
+	/* Global Form Scales */
+	--form-title: 18px;
+	--form-label: 14px;
+	--form-input: 14px;
+	--form-btn: 14px;
+
+	/* Global Entity & Doctor Scales */
+	--entity-title: 18px;
+	--entity-table-text: 14px;
+	--entity-add-text: 14px;
+	--doctor-title: 18px;
+	--doctor-filter-label: 11px;
+	--doctor-filter-text: 14px;
+	--doctor-table-text: 14px;
+	--doctor-footer-text: 14px;
+	--doctor-add-text: 14px;
+}
